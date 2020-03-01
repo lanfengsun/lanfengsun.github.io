@@ -2,4 +2,4 @@
 
 This repo contains the source code of my GitHub web page.
 
-You can visit the page at lanfengsun.github.io
+You can visit the page at https://lanfengsun.github.io
