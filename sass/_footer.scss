@@ -1,0 +1,41 @@
+.footer {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 6rem 0;
+    font-size: 1.6rem;
+    background: $linear-gradient-dark;
+    color: $color-grey;
+    display: grid;
+    justify-items: center;
+    row-gap: 1rem;
+
+    &__email {
+        text-decoration: none;
+        color: inherit;
+        margin: 0 .3rem;
+        display: inline-block;
+        transition: $ease-in-fast;
+
+        &:hover {
+            transform: scale(1.05);
+            color: $color-light;
+        }
+    }
+
+    &__links {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        column-gap: 1.5rem;
+    }
+
+    &__link {
+        text-decoration: none;
+        color: inherit;
+        font-size: 2.5rem;
+        transition: $ease-in-fast;
+
+        &:hover {
+            color: $color-light;
+        }
+    }
+}

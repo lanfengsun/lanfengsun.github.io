@@ -1,0 +1,54 @@
+%heading {
+    font-family: $font-primary;
+    font-weight: 600;
+}
+
+.heading-1 {
+    @extend %heading;
+    font-size: 4.5rem;
+    font-weight: 700;
+    line-height: 1;
+}
+
+.heading-2 {
+    @extend %heading;
+    font-size: 4rem;
+    line-height: 1;
+}
+
+.btn {
+    background-color: $color-primary;
+    color: #fff;
+    border: none;
+    font-family: $font-primary;
+    font-size: 1.4rem;
+    text-transform: uppercase;
+    padding: 1.5rem 2.5rem;
+    cursor: pointer;
+    border-radius: 3px;
+    box-shadow: 0 1.5rem 3rem rgba(0, 0, 0, 0.1);
+    transition: $ease-in-out-medium;
+    &:hover {
+        background-color: $color-primary-dark;
+    }
+    &:active {
+        outline: none;
+        transform: scale(0.98);
+    }
+}
+
+.mb-sm {
+    margin-bottom: 2rem;
+}
+
+.mb-md {
+    margin-bottom: 3rem;
+}
+
+.mb-lg {
+    margin-bottom: 4rem;
+}
+
+.mb-xl {
+    margin-bottom: 8rem;
+}

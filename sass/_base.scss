@@ -1,0 +1,68 @@
+// // COLOR VARIABLES
+$color-dark: #222831;
+$color-grey-dark: #393e46;
+$color-grey: #7d7d7d;
+$color-primary: #46b7b9;
+$color-primary-dark: #2f9296;
+$color-gold: #ffde7d;
+$color-red: #d72323;
+$color-pink: #f6416c;
+$color-orange: #ff9a00;
+$color-green: #1fab89;
+$color-blue: #3490de;
+$color-light: #eeeeee;
+$color-lightest: #f6f6f6;
+$color-transparent: transparent;
+// GRADIENT
+$linear-gradient-darker-transparent: linear-gradient( to bottom right, rgba($color-dark, 0.75), rgba($color-grey-dark, 0.75));
+$linear-gradient-dark-transparent: linear-gradient( to bottom right, rgba($color-dark, 0.5), rgba($color-grey-dark, 0.5));
+$linear-gradient-dark: linear-gradient( to bottom right, $color-dark, $color-grey-dark);
+// FONT VARIABLES
+$font-primary: "Montserrat",
+sans-serif;
+$font-fontawesome: "Font Awesome\ 5 Free";
+// BOX SHADOW
+$shadow-lg: 0 1.5rem 4rem rgba($color-dark, 0.2);
+$shadow-sm: 0 1rem 2rem rgba($color-dark, 0.2);
+// TRANSITIONS
+$ease-in-fast: all 0.1s ease-in;
+$ease-out-fast: all 0.1s ease-out;
+$ease-in-out-fast: all .1s ease-in-out;
+$ease-in-out-medium: all .2s ease-in-out;
+$ease-in-out-slow: all .4s ease-in-out;
+// RESPONSIVE BREAKPOINTS
+$bp-largest: 75em; // 1200px
+$bp-large: 62.5em; // 1000px
+$bp-medium: 50em; // 800px
+$bp-small: 37.5em; // 600px
+$bp-xsmall: 28em; // 448px
+*,
+*::before,
+*::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: inherit;
+}
+
+html {
+    box-sizing: border-box;
+    font-size: 62.5%;
+    @media only screen and (max-width: $bp-largest) {
+        font-size: 50%;
+    }
+}
+
+body {
+    color: $color-dark;
+    font-family: $font-primary;
+    font-weight: 400;
+}
+
+.container {
+    display: grid; // rows: header, skills, experience, projects, footer
+    grid-template-rows: [header-start] 100vh [header-end main-start] repeat( 5, [row-start] min-content [row-end]);
+    grid-template-columns: [full-start] minmax(6rem, 1fr) [center-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end]) [center-end] minmax(6rem, 1fr) [full-end];
+    @media only screen and (max-width: $bp-xsmall) {
+        grid-template-columns: [full-start center-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end]) [center-end full-end];
+    }
+}

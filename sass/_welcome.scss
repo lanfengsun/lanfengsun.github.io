@@ -1,0 +1,120 @@
+.welcome {
+    grid-column: 1 / -1;
+    grid-row: header-start / header-end;
+    display: grid;
+    grid-template-rows: 3fr min-content 2fr;
+    grid-template-columns: minmax(0, 10vw) [text-start] minmax(min-content, 1fr) [text-end image-start] min-content [image-end] minmax(0, 10vw);
+    row-gap: 6rem;
+    justify-items: center;
+    align-items: center;
+    background-image: $linear-gradient-dark-transparent, url(../img/welcome-background-lg.jpg);
+    background-size: cover;
+
+    @media only screen and (max-width: $bp-small) {
+        grid-template-columns: [text-start] 1fr [text-end];
+        background-image: $linear-gradient-dark-transparent, url(../img/welcome-background-md.jpg);
+    }
+
+    &__image {
+        grid-row: 1 / -1;
+        grid-column: image-start / image-end;
+        opacity: 0;
+        animation: fadeUp 1s ease-in-out .6s forwards;
+
+        img {
+            max-width: 30vw;
+        }
+
+        @media only screen and (max-width: $bp-small) {
+            display: none;
+        }
+    }
+
+    &__main {
+        grid-column: text-start / text-end;
+        grid-row: 1 / 2;
+        color: $color-light;
+        align-self: flex-end;
+        animation: fadeIn 1.5s ease-out;
+        display: grid;
+        grid-template-rows: repeat(2, 1fr);
+        justify-items: center;
+        align-items: center;
+        text-align: center;
+
+        &--1 {
+            font-weight: 400;
+            font-size: 3rem;
+        }
+
+        &--2 {
+            font-size: 6rem;
+            font-style: italic;
+            font-weight: 700;
+
+            @media only screen and (max-width: $bp-xsmall) {
+                font-size: 5rem;
+            }
+        }
+    }
+
+    &__list {
+        grid-row: 2 / 3;
+        grid-column: text-start / text-end;
+        list-style: none;
+        font-weight: 400;
+        font-size: 2.5rem;
+        color: $color-light;
+        opacity: 0.75;
+        display: grid;
+        row-gap: .5rem;
+        text-align: center;
+
+        &--1 {
+            animation: fadeIn 1s ease-in-out 1.6s backwards;
+        }
+
+        &--2 {
+            animation: fadeIn 1s ease-in-out 2.6s backwards;
+        }
+
+        &--3 {
+            animation: fadeIn 1s ease-in-out 3.6s backwards;
+        }
+
+        &--4 {
+            animation: fadeIn 1s ease-in-out 4.6s backwards;
+        }
+    }
+
+    &__links {
+        grid-column: text-start / text-end;
+        grid-row: 3 / 4;
+        align-self: flex-start;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        column-gap: 5rem;
+        animation: fadeIn 1s ease-in-out 4.6s backwards;
+    }
+
+    &__link {
+        opacity: 0.5;
+        transition: $ease-in-out-slow;
+
+        &,
+        &:visited,
+        &:active {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        &:hover {
+            cursor: pointer;
+            opacity: 0.8;
+        }
+
+        i {
+            font-size: 6rem;
+        }
+    }
+}
